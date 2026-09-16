@@ -1,6 +1,6 @@
 # Báo cáo Ngày 4 - Keypoint & Pose
 
-Họ tên: ______   Nhóm: ______   Ngày: ______
+Họ tên: Vũ Đình Sơn Lâm   Nhóm: ______   Ngày: 16/09/2026
 
 > Cách dùng: copy file này thành `reports/REPORT.md`. Điền bằng số liệu do công cụ sinh ra;
 > không tự ước lượng hoặc sửa số trong file JSON.
@@ -13,18 +13,22 @@ thời gian gán / 20. -->
 
 | Chỉ số | Giá trị |
 | --- | ---: |
-| Số ảnh đã gán | |
-| Số skeleton | |
-| v=2 / v=1 / v=0 | |
-| Thời gian trung bình mỗi ảnh | |
+| Số ảnh đã gán | 20 |
+| Số skeleton | 29 |
+| v=2 / v=1 / v=0 | 360 / 108 / 25 |
+| Thời gian trung bình mỗi ảnh | 11 phút |
 
 Ba khớp có `%v=1` cao nhất (chép từ `reports/visibility_report.md`):
 
-1.
-2.
-3.
+1. left_ear (19)
+2. right_ear (14)
+3. left_wrist (10)
 
 Chúng có đúng là những khớp bạn thấy khó gán nhất không? Nếu không, giải thích.
+
+Những khớp này không quá khó gán. Lí do: có thể ước lượng được vị trí của chúng dựa trên vị trí của các khớp khác, hành động của người trong ảnh, và cách cơ thể con người chuyển động.
+
+Những khớp thực sự khó gán là những khớp của ảnh bị mờ, không thể xác định được pose của người trong ảnh.
 
 <!-- Trả lời 2–4 câu. Phân biệt “hay bị che” với “khó xác định vị trí giải phẫu”; nêu bằng
 chứng nhìn thấy thay vì chỉ nêu cảm giác. -->
@@ -36,30 +40,31 @@ lần sau rework. Đếm số phần tử trong từng danh sách lỗi, không 
 
 | Chỉ số | Trước rework | Sau rework |
 | --- | ---: | ---: |
-| OKS trung bình | | |
-| OKS@0.50 | | |
-| OKS@0.75 | | |
-| Lỗi `dao_trai_phai` | | |
-| Lỗi `nham_nguoi` | | |
-| Lỗi `xoa_khop_bi_che` | | |
+| OKS trung bình | 0.944 | 0.942 |
+| OKS@0.50 | 0.931 | 1.000 |
+| OKS@0.75 | 0.931 | 1.000 |
+| Lỗi `dao_trai_phai` | 0 | 0 |
+| Lỗi `nham_nguoi` | 0 | 0 |
+| Lỗi `xoa_khop_bi_che` | 0 | 0 |
 
 **Tôi đã sửa gì giữa hai lần chạy** (ghi cụ thể: ảnh nào, người thứ mấy, khớp nào):
 
 <!-- Mỗi dòng phải có: tên ảnh + người thứ mấy + keypoint + thao tác sửa. Không viết “đã sửa
 lại một số lỗi”. -->
 
--
--
--
+- train_13.jpg, người thứ 2, thêm skeleton do bị thiếu. 
+- train_13.jpg, người thứ 3, thêm skeleton do bị thiếu.
 
 **Lỗi đảo trái/phải của tôi xảy ra ở ảnh nào?** Ảnh đó dễ hay khó? Nếu là ảnh dễ,
 bạn nghĩ vì sao mình vẫn sai?
+
+Không có lỗi đảo trái/phải trong toàn bộ 20 ảnh.
 
 <!-- Nếu không có lỗi, ghi rõ “Không có lỗi đảo trái/phải trong toàn bộ 20 ảnh.” -->
 
 ## 3. Kiểm chéo
 
-Bạn cùng nhóm: ______
+Bạn cùng nhóm: Không có
 
 Khớp lệch `%v=1` nhiều nhất giữa hai bảng đếm:
 
@@ -82,11 +87,11 @@ Không chỉ ghi “cẩn thận hơn khi gán”. -->
 
 | Chỉ số | yolo26n-pose gốc | Sau fine-tune | Chênh |
 | --- | ---: | ---: | ---: |
-| pose_mAP50 | | | |
-| pose_mAP50-95 | | | |
-| pose_precision | | | |
-| pose_recall | | | |
-| box_mAP50-95 | | | |
+| pose_mAP50 | 0.845 | 0.845 | 0.0 |
+| pose_mAP50-95 | 0.6853 | 0.6908 | 0.0055 |
+| pose_precision | 0.9734 | 0.9792 | 0.0058 |
+| pose_recall | 0.8462 | 0.8462 | 0.0 |
+| box_mAP50-95 | 0.8119 | 0.8041 | -0.0078 |
 
 ### Trả lời năm câu hỏi ở cuối notebook
 
