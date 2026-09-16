@@ -1,4 +1,4 @@
-# Mini guideline - nhóm: ______  |  người gán: ______  |  ngày: ______
+# Mini guideline - nhóm: ______  |  người gán: Vũ Đình Sơn Lâm  |  ngày: 16/09/2026
 
 > Điền file này **trong lúc** gán nhãn, không phải sau khi xong. Mỗi lần bạn dừng lại
 > hơn 10 giây để phân vân, đó là một dòng phải ghi vào đây.
@@ -17,8 +17,8 @@
 | Tình huống | Luật nhóm bạn chọn | Vì sao |
 | --- | --- | --- |
 | Hông của người mặc quần áo dài | | |
-| Tai bị tóc hoặc mũ bảo hiểm che một phần | | |
-| Người bị cắt ở mép ảnh (chỉ thấy từ hông trở lên) | | |
+| Tai bị tóc hoặc mũ bảo hiểm che một phần | Ước lượng vị trí left_ear/right_ear dựa trên vị trí của left_eye/right_eye | |
+| Người bị cắt ở mép ảnh (chỉ thấy từ hông trở lên) | Đặt v = 0 cho left_knee, right_knee, left_ankle, right_ankle | |
 | Cổ tay nằm sau tay lái / sau thân mình | | |
 | Hai người chồng lên nhau | | |
 | Người nhỏ đến mức nào thì không gán nữa | | |
@@ -29,10 +29,10 @@ một câu văn chung chung.
 
 ## 3. Ba ca mơ hồ đã gặp (bắt buộc, ghi ít nhất 3)
 
-### Ca 1 - ảnh `______`, người thứ `___`, khớp `______`
+### Ca 1 - ảnh `train_13.jpg`, người thứ `3`, khớp `307`
 
-- Mơ hồ ở chỗ nào:
-- Bạn quyết thế nào:
+- Mơ hồ ở chỗ nào: Hình người quá mờ, rất khó xác định rõ ràng pose.
+- Bạn quyết thế nào: Tưởng tượng pose dựa trên phần hình ảnh nhìn được và set up skeleton dựa trên cơ sở này.
 - Vì sao:
 - Nếu người khác quyết ngược lại thì model học sai cái gì:
 
